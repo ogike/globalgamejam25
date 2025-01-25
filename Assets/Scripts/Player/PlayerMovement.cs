@@ -56,7 +56,8 @@ namespace Player
 		public float jumpHangMaxSpeedMult; 				
 
 		[Header("Wall Jump")]
-		public Vector2 wallJumpForce; //The actual force (this time set by us) applied to the player when wall jumping.
+		public float wallJumpHorizontalForce; //The actual force (this time set by us) applied to the player when wall jumping.
+		public float wallJumpVerticalMult;
 		[Space(5)]
 		[Range(0f, 1f)] public float wallJumpRunLerp; //Reduces the effect of player's movement while wall jumping.
 		[Range(0f, 1.5f)] public float wallJumpTime; //Time after wall jumping the player's movement is slowed for.
@@ -532,7 +533,7 @@ namespace Player
 			LastOnWallLeftTime = 0;
 
 			#region Perform Wall Jump
-			Vector2 force = new Vector2(wallJumpForce.x, wallJumpForce.y);
+			Vector2 force = new Vector2(wallJumpHorizontalForce, jumpForce * wallJumpVerticalMult);
 			force.x *= dir; //apply force in opposite direction of wall
 
 			if (Mathf.Sign(RB.linearVelocity.x) != Mathf.Sign(force.x))
