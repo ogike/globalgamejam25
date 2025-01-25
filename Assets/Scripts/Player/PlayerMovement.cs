@@ -253,7 +253,7 @@ namespace Player
 			#endregion
 
 			#region JUMP CHECKS
-			if (IsJumping && RB.linearVelocity.y < 0)
+			if (IsJumping && RB.linearVelocity.y <= 0)
 			{
 				IsJumping = false;
 

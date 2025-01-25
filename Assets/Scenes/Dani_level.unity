@@ -5457,7 +5457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 921636475722362287, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2485731
+      value: 0.6514268
       objectReference: {fileID: 0}
     - target: {fileID: 2909870528420504051, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5503,6 +5503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraSetup
       objectReference: {fileID: 0}
+    - target: {fileID: 4957486444727279236, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
+      propertyPath: FollowOffset.y
+      value: 1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5119893345637995049, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -5513,7 +5517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7365970613133681779, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2485731
+      value: 0.6514268
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
