@@ -199,26 +199,26 @@ namespace Player
 			#endregion
 
 			#region INPUT HANDLER
-			_moveInput.x = Input.GetAxisRaw("Horizontal");
-			_moveInput.y = Input.GetAxisRaw("Vertical");
+
+			_moveInput = UserInput.Instance.MoveInput;
 
 			if (_moveInput.x != 0)
 				CheckDirectionToFace(_moveInput.x > 0);
 
-			if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.J))
+			if(UserInput.Instance.JumpButtonPressedThisFrame)
 			{
 				OnJumpInput();
 			}
 
-			if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.J))
+			if (UserInput.Instance.JumpButtonReleasedThisFrame)
 			{
 				OnJumpUpInput();
 			}
 
-			if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K))
-			{
-				OnDashInput();
-			}
+			// if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K))
+			// {
+			// 	OnDashInput();
+			// }
 			#endregion
 
 			#region COLLISION CHECKS
