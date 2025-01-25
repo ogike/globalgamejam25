@@ -8,6 +8,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -147,7 +148,7 @@ namespace Player
 
 		#region LAYERS & TAGS
 		[Header("Layers & Tags")]
-		[SerializeField] private LayerMask _groundLayer;
+		[SerializeField] private LayerMask _physicsCheckLayer;
 		#endregion
 		
 		//Unity Callback, called when the inspector updates
@@ -224,7 +225,7 @@ namespace Player
 			if (!IsDashing && !IsJumping)
 			{
 				//Ground Check
-				if (Physics2D.OverlapBox(_groundCheckPoint.position, _groundCheckSize, 0, _groundLayer)) //checks if set box overlaps with ground
+				if (Physics2D.OverlapBox(_groundCheckPoint.position, _groundCheckSize, 0, _physicsCheckLayer)) //checks if set box overlaps with ground
 				{
 					if(LastOnGroundTime < -0.1f)
 					{
@@ -236,13 +237,13 @@ namespace Player
 				}		
 
 				//Right Wall Check
-				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && IsFacingRight)
-				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && !IsFacingRight)) && !IsWallJumping)
+				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _physicsCheckLayer) && IsFacingRight)
+				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _physicsCheckLayer) && !IsFacingRight)) && !IsWallJumping)
 					LastOnWallRightTime = coyoteTime;
 
 				//Right Wall Check
-				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && !IsFacingRight)
-				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && IsFacingRight)) && !IsWallJumping)
+				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _physicsCheckLayer) && !IsFacingRight)
+				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _physicsCheckLayer) && IsFacingRight)) && !IsWallJumping)
 					LastOnWallLeftTime = coyoteTime;
 
 				//Two checks needed for both left and right walls since whenever the play turns the wall checkPoints swap sides
