@@ -262,18 +262,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.329911
       objectReference: {fileID: 0}
@@ -316,38 +304,6 @@ PrefabInstance:
     - target: {fileID: 6258747559919863110, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: jumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: jumpHeight
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: runMaxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: gravityScale
-      value: 3.397893
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: runAccelAmount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: gravityStrength
-      value: -33.333332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: runAcceleration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
-      propertyPath: runDeccelAmount
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
