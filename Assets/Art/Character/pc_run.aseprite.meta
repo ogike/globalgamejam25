@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 802c3d0ab1adcc64e99a1d870616416e
+guid: f83cc8dd2a4c32e448c85a9d39d275b6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,9 +122,30 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: pc_crouch
+  - name: Frame_0
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 20
+      width: 6
+      height: 7
+    spriteID: 5cc58de146793164ab1a94e0d9c24bf3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 20}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +153,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 7
-      height: 6
-    spriteID: 0b2439b0592ce954fa372db0c20b403b
+      width: 6
+      height: 8
+    spriteID: 65c851e94e168b74e86729e1486cfd8d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,24 +164,93 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 4
+      width: 6
+      height: 8
+    spriteID: 8471234cee0f9ef4699a82e3b50cf10b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 18, y: 4}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 20
+      width: 6
+      height: 6
+    spriteID: 6bbd7d5410ac1b34aa901e47cdadd4e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 18, y: 20}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -718379894
-    name: pc_crouch
+    guid: -1489273747
+    name: pc_run
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: pc_crouch
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 1
         y: 0
-        width: 7
+        width: 6
+        height: 7
+      spriteId: 5cc58de146793164ab1a94e0d9c24bf3
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 0
+        width: 6
+        height: 8
+      spriteId: 65c851e94e168b74e86729e1486cfd8d
+    - name: Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 0
+        width: 6
+        height: 8
+      spriteId: 8471234cee0f9ef4699a82e3b50cf10b
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 0
+        width: 6
         height: 6
-      spriteId: 0b2439b0592ce954fa372db0c20b403b
+      spriteId: 6bbd7d5410ac1b34aa901e47cdadd4e9
     linkedCells: []
     parentIndex: -1
   platformSettings:

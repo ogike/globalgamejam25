@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 1918140164581923761}
   - component: {fileID: 7234735204820780043}
   - component: {fileID: 718700874407598398}
-  - component: {fileID: 9073752638845634841}
   - component: {fileID: 7053219897344289428}
   - component: {fileID: 6170629543904907655}
+  - component: {fileID: 376708913007496511}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -203,10 +203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityStrength: -33.333332
   gravityScale: 3.397893
-  fallGravityMult: 1.5
-  maxFallSpeed: 25
-  fastFallGravityMult: 2
-  maxFastFallSpeed: 30
+  fallGravityMult: 1
+  maxFallSpeed: 13
+  fastFallGravityMult: 1.2
+  maxFastFallSpeed: 17
   runMaxSpeed: 5
   runAcceleration: 1.5
   runAccelAmount: 15
@@ -218,20 +218,20 @@ MonoBehaviour:
   jumpHeight: 1.5
   jumpTimeToApex: 0.3
   jumpForce: 10
-  jumpCutGravityMult: 2
+  jumpCutGravityMult: 1
   jumpHangGravityMult: 0.5
   jumpHangTimeThreshold: 1
   jumpHangAccelerationMult: 1.1
   jumpHangMaxSpeedMult: 1.3
-  wallJumpHorizontalForce: 8
-  wallJumpVerticalMult: 1
+  wallJumpHorizontalForce: 0
+  wallJumpVerticalMult: 0
   wallJumpRunLerp: 0.5
   wallJumpTime: 0.15
   doTurnOnWallJump: 0
   slideSpeed: -7.5
   slideAccel: 7
-  coyoteTime: 0.1
-  jumpInputBufferTime: 0.011
+  coyoteTime: 0.05
+  jumpInputBufferTime: 0.05
   dashAmount: 1
   dashSpeed: 20
   dashSleepTime: 0.05
@@ -276,43 +276,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &9073752638845634841
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6258747559919863110}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.88}
-  m_Direction: 0
 --- !u!114 &7053219897344289428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +320,52 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!61 &376708913007496511
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258747559919863110}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.006546974, y: -0.122012615}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.4495735, y: 1.6766019}
+  m_EdgeRadius: 0
 --- !u!1 &7345243351833635888
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +421,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
