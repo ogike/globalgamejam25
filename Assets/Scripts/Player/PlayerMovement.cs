@@ -14,6 +14,8 @@ namespace Player
 {
 	public class PlayerMovement : MonoBehaviour
 	{
+		public static PlayerMovement Instance { get; private set; }
+		
 		[Header("Gravity")]
 		[HideInInspector] public float gravityStrength; //Downwards force (gravity) needed for the desired jumpHeight and jumpTimeToApex.
 		[HideInInspector] public float gravityScale; //Strength of the player's gravity as a multiplier of gravity (set in ProjectSettings/Physics2D).
@@ -189,6 +191,12 @@ namespace Player
 		{
 			RB = GetComponent<Rigidbody2D>();
 			//AnimHandler = GetComponent<PlayerAnimator>();
+
+			if (Instance != null)
+			{
+				Debug.LogError("More than one PlayerMovement in scene!");
+			}
+			Instance = this;
 		}
 
 		private void Start()
@@ -712,6 +720,12 @@ namespace Player
 				return false;
 		}
 		#endregion
+
+		public void TeleportTo(Vector3 position)
+		{
+			transform.position = position;
+			RB.linearVelocity = Vector2.zero;
+		}
 
 
 		#region EDITOR METHODS
