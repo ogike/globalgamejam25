@@ -117,8 +117,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b006b1be4a7aa8a4b8a966d3ac9ee6cc, type: 3}
-  m_Resource: {fileID: 8300000, guid: b006b1be4a7aa8a4b8a966d3ac9ee6cc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
+  m_Resource: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -246,8 +246,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b006b1be4a7aa8a4b8a966d3ac9ee6cc, type: 3}
-  m_Resource: {fileID: 8300000, guid: b006b1be4a7aa8a4b8a966d3ac9ee6cc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
+  m_Resource: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1116,6 +1116,8 @@ MonoBehaviour:
   dashSound: {fileID: 415736133536397453}
   dashStopSound: {fileID: 1157814770237423276}
   walkingSound: {fileID: 8219665053362810885}
+  refillSound: {fileID: 289974478112653300}
+  retrySound: {fileID: 8415480911542082601}
   defaultSource: {fileID: 6297230587063415482}
 --- !u!82 &6297230587063415482
 AudioSource:

@@ -13,6 +13,7 @@ namespace Map
             if (col.tag == "Player")
             {
                 PlayerMovement.Instance.StartRefillDash(amount);
+                SfxManager.Instance.RefillSound();
             }
         }
 
@@ -21,6 +22,7 @@ namespace Map
             if (other.tag == "Player")
             {
                 PlayerMovement.Instance.StopRefillDash();
+                SfxManager.Instance.StopRefillSound();
             }
         }
     }

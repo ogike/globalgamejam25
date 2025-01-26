@@ -10,6 +10,9 @@ public class SfxManager : MonoBehaviour
     public AudioSource dashSound;
     public AudioSource dashStopSound;
     public AudioSource walkingSound;
+    
+    public AudioSource refillSound;
+    public AudioSource retrySound; 
 
     public AudioSource defaultSource;
 
@@ -71,5 +74,20 @@ public class SfxManager : MonoBehaviour
         walkingSound.loop = false;
         walkingSound.Stop();
         _walkingPlaying = false;
+    }
+
+    public void RefillSound()
+    {
+        refillSound.Play();
+    }
+
+    public void StopRefillSound()
+    {
+        refillSound.Stop();
+    }
+
+    public void RetrySound()
+    {
+        retrySound.Play();
     }
 }
