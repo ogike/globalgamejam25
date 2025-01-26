@@ -7,8 +7,10 @@
  */
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -78,7 +80,6 @@ namespace Player
 		[Space(20)]
 
 		[Header("Dash")]
-		public int dashAmount;
 		public float dashSpeed;
 		public float dashSleepTime; //Duration for which the game freezes when we press dash but before we read directional input and apply a force
 		[Space(5)]
@@ -106,7 +107,9 @@ namespace Player
 
 		public SpriteRenderer bubbleSprite;
 		public SpriteRenderer playerSprite;
-		
+
+		public List<Image> bubbleUiImages;
+
 		#endregion
 
 		#region STATE PARAMETERS
@@ -136,6 +139,7 @@ namespace Player
 		//Dash
 		private int _dashesLeft;
 		private bool _dashRefilling;
+		private bool _dashCanRefill; //set when leaving refill zone
 		private Vector2 _lastDashDir;
 		private bool _isDashAttacking;
 
@@ -600,6 +604,8 @@ namespace Player
 			float startTime = Time.time;
 
 			_dashesLeft--;
+			UpdateDashAmountUI();
+			
 			_isDashAttacking = true;
 
 			playerSprite.enabled = false;
@@ -636,14 +642,64 @@ namespace Player
 			IsDashing = false;
 		}
 
+		public void StartRefillDash(int amount)
+		{
+			_dashCanRefill = true;
+			if(_dashRefilling) return;
+
+			StartCoroutine(RefillDash(amount));
+		}
+
+		public void StopRefillDash()
+		{
+			_dashCanRefill = false;
+		}
+
 		//Short period before the player is able to dash again
 		private IEnumerator RefillDash(int amount)
 		{
 			//SHoet cooldown, so we can't constantly dash along the ground, again this is the implementation in Celeste, feel free to change it up
 			_dashRefilling = true;
-			yield return new WaitForSeconds(dashRefillTime);
+
+			float _curTime = 0;
+			while (_curTime < dashRefillTime)
+			{
+				_curTime += Time.deltaTime;
+				yield return new WaitForSeconds(0);
+				if (!_dashCanRefill)
+				{
+					_dashRefilling = false;
+					yield break;
+				}
+			}
+			
 			_dashRefilling = false;
-			_dashesLeft = Mathf.Min(dashAmount, _dashesLeft + 1);
+			_dashesLeft = Mathf.Max(_dashesLeft, amount);
+			UpdateDashAmountUI();
+		}
+
+		public void SetDashAmount(int amount)
+		{
+			_dashCanRefill = false;
+			_dashRefilling = false;
+			_dashesLeft = amount;
+			UpdateDashAmountUI();
+		}
+		
+
+		public void UpdateDashAmountUI()
+		{
+			for (int i = 0; i < bubbleUiImages.Count; i++)
+			{
+				if (i + 1 <= _dashesLeft)
+				{
+					bubbleUiImages[i].enabled = true;
+				}
+				else
+				{
+					bubbleUiImages[i].enabled = false;
+				}
+			}
 		}
 		#endregion
 
@@ -699,12 +755,6 @@ namespace Player
 
 		private bool CanDash()
 		{
-			// WHY IS THIS HERE...
-			if (!IsDashing && _dashesLeft < dashAmount && LastOnGroundTime > 0 && !_dashRefilling)
-			{
-				StartCoroutine(nameof(RefillDash), 1);
-			}
-			
 			if (IsDashing) return false;
 
 			if (IsJumping) return false;
