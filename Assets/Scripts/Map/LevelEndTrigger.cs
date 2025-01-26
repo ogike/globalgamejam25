@@ -25,7 +25,7 @@ public class LevelEndTrigger : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
