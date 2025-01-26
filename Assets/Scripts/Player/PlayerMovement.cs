@@ -53,7 +53,7 @@ namespace Player
 		public float jumpHangTimeThreshold; //Speeds (close to 0) where the player will experience extra "jump hang". The player's velocity.y is closest to 0 at the jump's apex (think of the gradient of a parabola or quadratic function)
 		[Space(0.5f)]
 		public float jumpHangAccelerationMult; 
-		public float jumpHangMaxSpeedMult; 				
+		public float jumpHangMaxSpeedMult;
 
 		[Header("Wall Jump")]
 		public float wallJumpHorizontalForce; //The actual force (this time set by us) applied to the player when wall jumping.
@@ -94,6 +94,10 @@ namespace Player
 		public Rigidbody2D RB { get; private set; }
 		//Script to handle all player animations, all references can be safely removed if you're importing into your own project.
 		//public PlayerAnimator AnimHandler { get; private set; }
+
+		public SpriteRenderer bubbleSprite;
+		public SpriteRenderer playerSprite;
+		
 		#endregion
 
 		#region STATE PARAMETERS
@@ -151,7 +155,7 @@ namespace Player
 		[Header("Layers & Tags")]
 		[SerializeField] private LayerMask _physicsCheckLayer;
 		#endregion
-		
+
 		//Unity Callback, called when the inspector updates
 		private void OnValidate()
 		{
@@ -184,6 +188,9 @@ namespace Player
 		{
 			SetGravityScale(gravityScale);
 			IsFacingRight = true;
+
+			bubbleSprite.enabled = false;
+			playerSprite.enabled = true;
 		}
 		
 
@@ -214,6 +221,11 @@ namespace Player
 			if (UserInput.Instance.JumpButtonReleasedThisFrame)
 			{
 				OnJumpUpInput();
+			}
+
+			if (UserInput.Instance.JumpButtonHoldPerformed)
+			{
+				OnDashInput();
 			}
 
 			// if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K))
@@ -306,6 +318,8 @@ namespace Player
 			if (CanDash() && LastPressedDashTime > 0)
 			{
 				//Freeze game for split second. Adds juiciness and a bit of forgiveness over directional input
+				bubbleSprite.enabled = true;
+				
 				Sleep(dashSleepTime); 
 
 				//If not direction pressed, dash forward
@@ -413,6 +427,12 @@ namespace Player
 
 		public void OnDashInput()
 		{
+			//if actively jumping
+			if (IsJumping || _isJumpFalling)
+			{
+				if (!_isJumpCut) return;
+			}
+
 			LastPressedDashTime = dashInputBufferTime;
 		}
 		#endregion
@@ -564,6 +584,9 @@ namespace Player
 			_dashesLeft--;
 			_isDashAttacking = true;
 
+			playerSprite.enabled = false;
+			bubbleSprite.enabled = true;
+
 			SetGravityScale(0);
 
 			//We keep the player's velocity at the dash speed during the "attack" phase (in celeste the first 0.15s)
@@ -587,6 +610,9 @@ namespace Player
 			{
 				yield return null;
 			}
+
+			bubbleSprite.enabled = false;
+			playerSprite.enabled = true;
 
 			//Dash over
 			IsDashing = false;
@@ -655,10 +681,15 @@ namespace Player
 
 		private bool CanDash()
 		{
+			// WHY IS THIS HERE...
 			if (!IsDashing && _dashesLeft < dashAmount && LastOnGroundTime > 0 && !_dashRefilling)
 			{
 				StartCoroutine(nameof(RefillDash), 1);
 			}
+			
+			if (IsDashing) return false;
+
+			if (IsJumping) return false;
 
 			return _dashesLeft > 0;
 		}
