@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Player;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public AnimationCurve fadeInCurve;
     public AnimationCurve fadeOutCurve;
+
+    public int startingBubbleAmount;
     
     public bool IsInFailState { get; private set; }
 
@@ -34,6 +37,11 @@ public class GameManager : MonoBehaviour
         FadeIn();
     }
 
+    private void Start()
+    {
+        PlayerMovement.Instance.SetDashAmount(startingBubbleAmount);
+    }
+
     public void SetFailState(bool value)
     {
         IsInFailState = value;
@@ -42,6 +50,7 @@ public class GameManager : MonoBehaviour
     public void RetryAt(Vector3 position)
     {
         PlayerMovement.Instance.TeleportTo(position);
+        PlayerMovement.Instance.SetDashAmount(startingBubbleAmount);
     }
     
     public void SetFadeToBlackColor(float opacity)

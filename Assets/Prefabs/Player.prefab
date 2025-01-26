@@ -321,14 +321,13 @@ MonoBehaviour:
   slideAccel: 7
   coyoteTime: 0.05
   jumpInputBufferTime: 0.05
-  dashAmount: 1
   dashSpeed: 10
   dashSleepTime: 1
   dashAttackTime: 0.15
   dashEndTime: 0.15
   dashEndSpeed: {x: 15, y: 15}
   dashEndRunLerp: 0.5
-  dashRefillTime: 0.1
+  dashRefillTime: 0.3
   dashInputBufferTime: 0.1
   slowTimeCurve:
     serializedVersion: 2
@@ -561,6 +560,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  startingBubbleAmount: 0
 --- !u!1 &7345243351833635888
 GameObject:
   m_ObjectHideFlags: 0
