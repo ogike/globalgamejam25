@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -112,10 +112,10 @@ TextureImporter:
       name: main_menu_play_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 26
-        height: 34
+        x: 0
+        y: 0
+        width: 98
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,77 +130,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: main_menu_play_1
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 9
-        width: 9
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5252212a5350ba370800000000000000
-      internalID: 8334761263289738533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: main_menu_play_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 9
-        width: 26
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2facb7427824c190800000000000000
-      internalID: -7943179371479781589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: main_menu_play_3
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 4
-        width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15f7a6cb2b7534e30800000000000000
-      internalID: 4486526078968037201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +145,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       main_menu_play_0: 1415090928339455819
-      main_menu_play_1: 8334761263289738533
-      main_menu_play_2: -7943179371479781589
-      main_menu_play_3: 4486526078968037201
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
