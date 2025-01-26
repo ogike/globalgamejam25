@@ -18,6 +18,8 @@ namespace Map
 
         private IEnumerator Fail()
         {
+            SfxManager.Instance.RetrySound();
+            
             GameManager.Instance.SetFailState(true);
             GameManager.Instance.FadeOut();
             yield return new WaitForSeconds(GameManager.Instance.fadeOutTime);
