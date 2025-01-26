@@ -90,6 +90,13 @@ namespace Player
 		[Space(5)]
 		[Range(0.01f, 0.5f)] public float dashInputBufferTime;
 
+		private float percent;
+		private float timeScale;
+		
+		public AnimationCurve slowTimeCurve;
+		public AnimationCurve speedUpTimeCurve;
+		public float speedUpTime;
+
 		#region COMPONENTS
 		public Rigidbody2D RB { get; private set; }
 		//Script to handle all player animations, all references can be safely removed if you're importing into your own project.
@@ -319,8 +326,6 @@ namespace Player
 			{
 				//Freeze game for split second. Adds juiciness and a bit of forgiveness over directional input
 				bubbleSprite.enabled = true;
-				
-				Sleep(dashSleepTime); 
 
 				//If not direction pressed, dash forward
 				if (_moveInput != Vector2.zero)
@@ -442,21 +447,8 @@ namespace Player
 		{
 			RB.gravityScale = scale;
 		}
-
-		private void Sleep(float duration)
-		{
-			//Method used so we don't need to call StartCoroutine everywhere
-			//nameof() notation means we don't need to input a string directly.
-			//Removes chance of spelling mistakes and will improve error messages if any
-			StartCoroutine(nameof(PerformSleep), duration);
-		}
-
-		private IEnumerator PerformSleep(float duration)
-		{
-			Time.timeScale = 0;
-			yield return new WaitForSecondsRealtime(duration); //Must be Realtime since timeScale with be 0 
-			Time.timeScale = 1;
-		}
+		
+		
 		#endregion
 
 		//MOVEMENT METHODS
@@ -575,6 +567,24 @@ namespace Player
 		{
 			//Overall this method of dashing aims to mimic Celeste, if you're looking for
 			// a more physics-based approach try a method similar to that used in the jump
+
+			// sleeping
+			float sleepStartTime = Time.time;
+			while (Time.time - sleepStartTime <= dashSleepTime)
+			{
+				percent = (Time.time - sleepStartTime) / dashSleepTime;
+				timeScale = slowTimeCurve.Evaluate(percent); 
+				Time.timeScale = timeScale;
+
+				if (UserInput.Instance.JumpButtonReleasedThisFrame)
+				{
+					break;
+				}
+
+				yield return new WaitForSeconds(0);
+			}
+			Time.timeScale = 1;
+			
 
 			LastOnGroundTime = 0;
 			LastPressedDashTime = 0;
