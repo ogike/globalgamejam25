@@ -7,8 +7,10 @@
  */
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -105,7 +107,9 @@ namespace Player
 
 		public SpriteRenderer bubbleSprite;
 		public SpriteRenderer playerSprite;
-		
+
+		public List<Image> bubbleUiImages;
+
 		#endregion
 
 		#region STATE PARAMETERS
@@ -600,6 +604,8 @@ namespace Player
 			float startTime = Time.time;
 
 			_dashesLeft--;
+			UpdateDashAmountUI();
+			
 			_isDashAttacking = true;
 
 			playerSprite.enabled = false;
@@ -669,6 +675,7 @@ namespace Player
 			
 			_dashRefilling = false;
 			_dashesLeft = Mathf.Max(_dashesLeft, amount);
+			UpdateDashAmountUI();
 		}
 
 		public void SetDashAmount(int amount)
@@ -676,6 +683,23 @@ namespace Player
 			_dashCanRefill = false;
 			_dashRefilling = false;
 			_dashesLeft = amount;
+			UpdateDashAmountUI();
+		}
+		
+
+		public void UpdateDashAmountUI()
+		{
+			for (int i = 0; i < bubbleUiImages.Count; i++)
+			{
+				if (i + 1 <= _dashesLeft)
+				{
+					bubbleUiImages[i].enabled = true;
+				}
+				else
+				{
+					bubbleUiImages[i].enabled = false;
+				}
+			}
 		}
 		#endregion
 

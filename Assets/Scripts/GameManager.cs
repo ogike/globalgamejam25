@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Player;
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
         IsInFailState = false;
         SetFadeToBlackColor(0);
         FadeIn();
+    }
+
+    private void Start()
+    {
+        PlayerMovement.Instance.SetDashAmount(startingBubbleAmount);
     }
 
     public void SetFailState(bool value)
