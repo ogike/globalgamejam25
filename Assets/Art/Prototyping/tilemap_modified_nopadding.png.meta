@@ -659,7 +659,29 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tilemap_modified_nopadding_0: 382596747032944692
+      tilemap_modified_nopadding_1: 1350347953788463657
+      tilemap_modified_nopadding_10: 7517545112703396372
+      tilemap_modified_nopadding_11: 3998460985407640284
+      tilemap_modified_nopadding_12: 6183493639082494660
+      tilemap_modified_nopadding_13: -724530391937385612
+      tilemap_modified_nopadding_14: 2654712344590968547
+      tilemap_modified_nopadding_15: 2530755347828944800
+      tilemap_modified_nopadding_16: 6334808309609954483
+      tilemap_modified_nopadding_17: 2821171404753846273
+      tilemap_modified_nopadding_18: -248639941942385542
+      tilemap_modified_nopadding_19: 7103719277735150536
+      tilemap_modified_nopadding_2: -1453832541441581604
+      tilemap_modified_nopadding_20: 4054675217682364060
+      tilemap_modified_nopadding_21: 44611023379733364
+      tilemap_modified_nopadding_3: -2138463034933988400
+      tilemap_modified_nopadding_4: -7904692162661420568
+      tilemap_modified_nopadding_5: 2886489094978002960
+      tilemap_modified_nopadding_6: 4275350963715283957
+      tilemap_modified_nopadding_7: -4233628774699296860
+      tilemap_modified_nopadding_8: 3251861083027026415
+      tilemap_modified_nopadding_9: 544457098453366290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
