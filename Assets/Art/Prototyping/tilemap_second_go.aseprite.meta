@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 802c3d0ab1adcc64e99a1d870616416e
+guid: 30ac7ec78011e514290924dcdc83679e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: pc_crouch
+  - name: tilemap_second_go
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.5882353, y: -0.29310346}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 7
-      height: 6
-    spriteID: 0b2439b0592ce954fa372db0c20b403b
+      width: 170
+      height: 116
+    spriteID: 56e62169187dac143ad4360e1f47b3b1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,21 +146,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -718379894
-    name: pc_crouch
+    guid: 1596915124
+    name: tilemap_second_go
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: pc_crouch
+    - name: tilemap_second_go
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 0
-        width: 7
-        height: 6
-      spriteId: 0b2439b0592ce954fa372db0c20b403b
+        y: 34
+        width: 170
+        height: 116
+      spriteId: 56e62169187dac143ad4360e1f47b3b1
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -179,4 +179,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 8, y: 8}
+  canvasSize: {x: 200, y: 150}
