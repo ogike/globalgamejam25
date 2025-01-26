@@ -407,6 +407,19 @@ namespace Player
 				SetGravityScale(0);
 			}
 			#endregion
+
+			#region Visuals
+
+			if (LastOnGroundTime > 0 && _moveInput.x != 0 && !IsJumping)
+			{
+				SfxManager.Instance.StartWalkSound();
+			}
+			else
+			{
+				SfxManager.Instance.StopWalkSound();
+			}
+
+			#endregion
 		}
 
 		private void FixedUpdate()
@@ -545,6 +558,8 @@ namespace Player
 				force -= RB.linearVelocity.y;
 
 			RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+			
+			SfxManager.Instance.PlayJumpSound();
 			#endregion
 		}
 
@@ -596,7 +611,8 @@ namespace Player
 				yield return new WaitForSeconds(0);
 			}
 			Time.timeScale = 1;
-			
+			SfxManager.Instance.PlayDashSound();
+
 
 			LastOnGroundTime = 0;
 			LastPressedDashTime = 0;
@@ -629,6 +645,7 @@ namespace Player
 			//Begins the "end" of our dash where we return some control to the player but still limit run acceleration (see Update() and Run())
 			SetGravityScale(gravityScale);
 			RB.linearVelocity = dashEndSpeed * dir.normalized;
+			SfxManager.Instance.PlayDashStopSound();
 
 			while (Time.time - startTime <= dashEndTime)
 			{
