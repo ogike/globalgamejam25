@@ -19838,7 +19838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686974065919517819, guid: 1559f28774d089c4a8ebfa75a20f1d31, type: 3}
       propertyPath: startingBubbleAmount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8036384113704379507, guid: 1559f28774d089c4a8ebfa75a20f1d31, type: 3}
       propertyPath: m_LocalPosition.x
