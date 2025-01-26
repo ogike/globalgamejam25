@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public AnimationCurve fadeInCurve;
     public AnimationCurve fadeOutCurve;
+
+    public int startingBubbleAmount;
     
     public bool IsInFailState { get; private set; }
 
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     public void RetryAt(Vector3 position)
     {
         PlayerMovement.Instance.TeleportTo(position);
+        PlayerMovement.Instance.SetDashAmount(startingBubbleAmount);
     }
     
     public void SetFadeToBlackColor(float opacity)

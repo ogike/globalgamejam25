@@ -670,6 +670,13 @@ namespace Player
 			_dashRefilling = false;
 			_dashesLeft = Mathf.Max(_dashesLeft, amount);
 		}
+
+		public void SetDashAmount(int amount)
+		{
+			_dashCanRefill = false;
+			_dashRefilling = false;
+			_dashesLeft = amount;
+		}
 		#endregion
 
 		#region OTHER MOVEMENT METHODS
