@@ -15,17 +15,11 @@ public class LevelEndTrigger : MonoBehaviour
     private IEnumerator LevelEnd()
     {
         SfxManager.Instance.RefillSound();
-        
+
         GameManager.Instance.FadeOut();
         yield return new WaitForSeconds(GameManager.Instance.fadeOutTime);
 
-        if (SceneManager.loadedSceneCount + 1 <= SceneManager.sceneCount)
-        {
-            SceneManager.LoadScene(SceneManager.loadedSceneCount + 1);
-        }
-        else
-        {
-            SceneManager.LoadScene(1);
-        }
+        int curScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(curScene + 1);
     }
 }
