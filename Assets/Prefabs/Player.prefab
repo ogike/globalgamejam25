@@ -371,6 +371,8 @@ MonoBehaviour:
   speedUpTime: 0
   bubbleSprite: {fileID: 5796062016516389739}
   playerSprite: {fileID: 9066213793926638735}
+  bubbleUiImages: []
+  mecanim: {fileID: 0}
   _groundCheckPoint: {fileID: 3418492328557414623}
   _groundCheckSize: {x: 0.38, y: 0.15}
   _frontWallCheckPoint: {fileID: 1679942857940759261}
@@ -395,7 +397,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 23258e16bc5b18c4eb8ceaa45fccb7f2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -460,7 +462,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 23258e16bc5b18c4eb8ceaa45fccb7f2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

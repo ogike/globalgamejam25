@@ -109,6 +109,7 @@ namespace Player
 		public SpriteRenderer playerSprite;
 
 		public List<Image> bubbleUiImages;
+		public Animator mecanim;
 
 		#endregion
 
@@ -201,6 +202,11 @@ namespace Player
 				Debug.LogError("More than one PlayerMovement in scene!");
 			}
 			Instance = this;
+
+			if (mecanim == null)
+			{
+				Debug.LogError("Animator not set up for PlayerMovement!");
+			}
 		}
 
 		private void Start()
@@ -230,7 +236,14 @@ namespace Player
 			_moveInput = UserInput.Instance.MoveInput;
 
 			if (_moveInput.x != 0)
+			{
 				CheckDirectionToFace(_moveInput.x > 0);
+				mecanim.SetBool("Running", true);
+			}
+			else
+			{
+				mecanim.SetBool("Running", false);
+			}
 
 			if(UserInput.Instance.JumpButtonPressedThisFrame)
 			{
@@ -261,12 +274,15 @@ namespace Player
 				{
 					if(LastOnGroundTime < -0.1f)
 					{
-						//TODO: mecanim
-						//AnimHandler.justLanded = true;
+						mecanim.SetBool("IsFalling", false);
 					}
 
 					LastOnGroundTime = coyoteTime; //if so sets the lastGrounded to coyoteTime
-				}		
+				}
+				else
+				{
+					mecanim.SetBool("IsFalling", true);
+				}
 
 				//Right Wall Check
 				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _physicsCheckLayer) && IsFacingRight)
@@ -314,8 +330,7 @@ namespace Player
 					_isJumpFalling = false;
 					Jump();
 
-					//TODO: mecanim
-					// AnimHandler.startedJumping = true;
+					mecanim.SetTrigger("Jump");
 				}
 				//WALL JUMP
 				else if (CanWallJump() && LastPressedJumpTime > 0)

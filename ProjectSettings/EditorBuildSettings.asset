@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kriszti_Lvl_2.unity
     guid: 7b17f6c1b06051144bc3654901e2cdf9
+  - enabled: 1
+    path: Assets/Scenes/Thank_you.unity
+    guid: 6c0d1f97592b94a41a1fe5633d81547b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
