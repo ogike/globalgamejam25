@@ -20395,6 +20395,14 @@ PrefabInstance:
       propertyPath: FollowOffset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3304919415934518431, guid: 1559f28774d089c4a8ebfa75a20f1d31, type: 3}
+      propertyPath: m_Name
+      value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304919415934518431, guid: 1559f28774d089c4a8ebfa75a20f1d31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3686974065919517819, guid: 1559f28774d089c4a8ebfa75a20f1d31, type: 3}
       propertyPath: startingBubbleAmount
       value: 5
