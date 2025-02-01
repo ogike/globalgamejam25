@@ -117,8 +117,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
-  m_Resource: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70438cc565da64443b5128487bde2a21, type: 3}
+  m_Resource: {fileID: 8300000, guid: 70438cc565da64443b5128487bde2a21, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -246,8 +246,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
-  m_Resource: {fileID: 8300000, guid: 65da82e9220dbd642bfd0e0a8977f5f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f0dd33adbcadf424e82106e9b5fb293f, type: 3}
+  m_Resource: {fileID: 8300000, guid: f0dd33adbcadf424e82106e9b5fb293f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1635,11 +1635,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1677,10 +1677,26 @@ PrefabInstance:
       propertyPath: fadeToBlackScreen
       value: 
       objectReference: {fileID: 8019824277154624434}
+    - target: {fileID: 2890258912663591091, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+      propertyPath: startingBubbleAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957519449834928215, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+      propertyPath: m_Name
+      value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957519449834928215, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6258747559919863110, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+      propertyPath: mecanim
+      value: 
+      objectReference: {fileID: 5684276858810509767}
     - target: {fileID: 7234735204820780043, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
       propertyPath: bubbleUiImages.Array.size
       value: 6
@@ -1709,16 +1725,50 @@ PrefabInstance:
       propertyPath: 'bubbleUiImages.Array.data[5]'
       value: 
       objectReference: {fileID: 923217892219940964}
+    - target: {fileID: 7345243351833635888, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+      propertyPath: m_Name
+      value: character_sprite
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7345243351833635888, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5684276858810509767}
   m_SourcePrefab: {fileID: 100100000, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
 --- !u!4 &1495071211603876686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1119442554786572166, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
   m_PrefabInstance: {fileID: 1960895743368477896}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9140349715443503352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7345243351833635888, guid: 29a4e64a48eb8424183e0c44618bbcd2, type: 3}
+  m_PrefabInstance: {fileID: 1960895743368477896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5684276858810509767
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140349715443503352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1176e9258c1d6494b819f4977101d6a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7155295909096999388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1729,11 +1779,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 921636475722362287, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 921636475722362287, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 921636475722362287, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1791,6 +1841,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4957486444727279236, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
+      propertyPath: FollowOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5119893345637995049, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: Lens.OrthographicSize
       value: 5
@@ -1801,11 +1855,11 @@ PrefabInstance:
       objectReference: {fileID: 1495071211603876686}
     - target: {fileID: 7365970613133681779, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7365970613133681779, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7365970613133681779, guid: fb73e60674c2cf44d839c08d2d88e9a0, type: 3}
       propertyPath: m_LocalPosition.z
